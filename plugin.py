@@ -13,9 +13,9 @@ class OSMEditorRemoteControlPlugin:
     self.action.setEnabled(False);
     self.action.setWhatsThis("Send remote control command to OSM editor to load data at current map view")
     self.action.setStatusTip("Send remote control command to OSM editor to load data at current map view")
-    QObject.connect(self.action, SIGNAL("triggered()"), self.run)
-    QObject.connect(self.iface.mapCanvas(), SIGNAL("layersChanged()"), self.changeStatus)
-    QObject.connect(self.iface.mapCanvas(), SIGNAL("extentsChanged()"), self.changeStatus)
+    self.action.triggered.connect(self.run)
+    self.iface.mapCanvas().layersChanged.connect(self.changeStatus);
+    self.iface.mapCanvas().extentsChanged.connect(self.changeStatus);
     self.iface.addToolBarIcon(self.action)
   def unload(self):
     self.iface.removeToolBarIcon(self.action)

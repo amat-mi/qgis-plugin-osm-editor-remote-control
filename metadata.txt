@@ -1,8 +1,9 @@
 [general]
 name=OSMEditorRemoteControl
-qgisMinimumVersion=1.5
+qgisMinimumVersion=2.0
 description=OSM Editor remote control.
-version=version 1.0
+authorName=Jochen Topf
+version=version 2.0
 
 tags=osm,openstreetmap,josm
 
